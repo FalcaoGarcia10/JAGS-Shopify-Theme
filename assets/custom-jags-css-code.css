@@ -1,0 +1,805 @@
+/*Custom code for centering logo in mobile mode and centering menu in desktop mode*/
+@media screen and (min-width: 1025px) {
+  .header--middle-left {
+    grid-template-columns: 1fr auto 1fr;
+    column-gap: 2rem;
+  }
+}
+ 
+@media screen and (min-width: 1025px) {
+  .header--middle-left .header__heading-link {
+    margin-left: 10rem;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .header:not(.drawer-menu).page-width {
+      padding-left: 15rem !important;
+      padding-right: 15rem !important;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .list-menu__item {
+      line-height: calc(1.56 + 0 / var(--font-body-scale)) !important;    
+      padding: 1.5rem !important;
+  } 
+}
+
+.header__icon, .header__icon--cart .icon {
+    height: 4.4rem;
+    width: 4.4rem;
+    padding: 0px;
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-content: center !important;
+}
+
+@media screen and (max-width: 990px) {
+.header {
+    padding: 0px 1rem 0px 1rem !important;
+    display: grid;
+    grid-template-areas: "left-icons heading icons";
+    grid-template-columns: 1fr 1.5fr 1fr;
+    align-items: center;
+    align-content: space-evenly;
+  }
+}
+
+.header__menu-item {
+    padding-top: 1.3rem !important;
+    padding-bottom: 1.3rem !important;
+    text-decoration: none;
+    color: rgba(var(--color-foreground),.75);
+}
+
+/*Custom code for adding to and bottom borders to manin menu (level-1) headers*/
+.header-wrapper--border-bottom {
+  border-bottom: .2rem solid rgb(0 0 0);
+  border-top: .2rem solid rgb(0 0 0);
+}
+
+/*Custom code for adding borders to main menu (level-1) and sub-menu (level 2) navigation headers and menu drawer in mobile and tablet mode*/
+.menu-drawer {
+  top: 104% !important;
+}
+
+.menu-drawer__navigation {
+  padding: 0rem 0 !important;
+}
+
+.menu-drawer__menu-item--active,
+.menu-drawer__menu-item:focus,
+.menu-drawer__close-button:focus,
+.menu-drawer__menu-item:hover,
+.menu-drawer__close-button:hover {
+  background-color: #FFFFFF !important;
+}
+
+/*Custom code for removing underlining to manin menu (level-1) when not selected or hovered.*/
+.header__active-menu-item {
+  color: #000000;
+  text-decoration: none !important;   
+}
+
+details[open] > .header__menu-item {
+  color: #000000;
+  text-decoration: none;
+}
+
+.header__menu-item:hover span {
+  text-decoration: none;
+  background-clip: text;
+  background-image: linear-gradient(to left, #ff00ff, #00ffff 50%, #000000 50%);
+  background-position-x: -100%;
+  background-position-y: 0;
+  background-size: 200% 50%;
+  transition: background-position 0.9s ease;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+}
+  
+.mega-menu__content {
+    background-color: rgb(0,0,0) !important;
+    border-left: 0;
+    border-radius: 0;
+    border-right: 0;
+    left: 0;
+    overflow-y: auto;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 999999;
+    border-bottom: 0.2rem solid rgb(0 0 0);
+    margin-right: 25rem;
+    margin-left: 25rem;
+}
+
+/*Custom code for removing caret, adding padding, and make text bold to main menu (level-1) in desktop mode*/
+.header__menu-item .icon-caret {
+  display: none;
+}
+
+summary.list-menu__item {
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 0.10rem !important;
+  color: #000000 !important;
+}
+
+.header__icon .icon {
+  color: #000000 !important;
+}
+
+/*Custom code for removing underlining and making text bold to submenu (level-2) in desktop mode. Level 2 is second level headers.*/
+.mega-menu__link.mega-menu__link--level-2 {
+  font-size: 12px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-decoration: none;
+  letter-spacing: 0.10rem !important;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}     
+  
+.mega-menu__link.mega-menu__link--level-2:hover {
+  text-decoration: none;
+  text-decoration: none;
+  background-clip: text;
+  background-image: linear-gradient(to left, #ff00ff, #00ffff 50%, #ffffff 50%);
+  background-position-x: -100%;
+  background-position-y: 0;
+  background-size: 200% 50%;
+  transition: background-position 0.9s ease;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+}
+
+.mega-menu__link.mega-menu__link--level-2:active {
+  text-decoration: none;
+}
+                                
+.mega-menu__link.mega-menu__link:hover {
+  text-decoration: none !important;
+  text-decoration: none;
+  background-clip: text;
+  background-image: linear-gradient(to left, #ff00ff, #00ffff 50%, #ffffff 50%);
+  background-position-x: -100%;
+  background-position-y: 0;
+  background-size: 200% 50%;
+  transition: background-position 0.9s ease;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+}
+
+/*Custom code for changing font size to third submenu (level-3) in desktop mode. Level 3 lists the types of products.*/
+.mega-menu__list {
+    display: grid !important;
+    gap: 2rem 0rem !important;
+    grid-template-columns: repeat(6,minmax(0,1fr)) !important;
+    justify-items: center !important;
+    padding: 1rem !important;
+}
+
+.mega-menu__list ul li a {
+  color: #fff !important;
+  font-size: 12.5px;
+  letter-spacing: 0.0rem !important;
+}
+
+/*Custom code for changing font size to condensed submenu in desktop mode. Condensed submenu lists the types of products that do not have a third submenu (level-3).*/
+.mega-menu__list--condensed .mega-menu__link {
+  font-weight: 100;
+  font-size: 12.5px;
+  letter-spacing: 0.0rem !important;
+  color: #FFFFFF;
+  padding-top: 0rem;
+  padding-bottom: 1rem;
+  align-items: center;
+}
+
+.mega-menu__list--condensed .mega-menu__link:hover {
+  color: #FF00FF;
+  text-decoration: none;
+  background-clip: text;
+  background-image: linear-gradient(to left, #ff00ff, #00ffff 50%, #ffffff 50%);
+  background-position-x: -100%;
+  background-position-y: 0;
+  background-size: 200% 50%;
+  transition: background-position 0.9s ease;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+}
+
+/*Custom code for drawer menu speed in Mobile mode.*/
+:root {
+  --duration-default: 1s;
+}
+
+/*Custom code for adding and formating icon-caret to close button on drawer menu in Mobile mode. 
+IMPORTANT!!! THIS CODE IS USESLESS, UNLESS icon-arrow IN CLOSE BUTTON IS CHANGED TO icon-caret IN header-drawer.liquid, LINES 43 AND 78.*/
+.menu-drawer__close-button .icon-caret {
+  transform: rotate(90deg);
+  height: .6rem;
+  right: calc(100% - 4rem) !important;
+  position: absolute;
+}
+
+/* Custom code for removing icon-arrow, adding icon-caret, and formating icon-caret to drawer menu sections in Mobile mode.*/
+.menu-drawer__menu-item>.icon-arrow {
+    display: none;
+}
+
+.js .menu-drawer__menu-item .icon-caret {
+    display: initial !important;
+    transform: rotate(270deg);
+    margin-right: 1rem;
+}
+    
+.page-width {
+    max-width: 100% !important;
+    margin: 0px 0px !important;
+}
+
+@media screen and (min-width: 750px) {
+ .slideshow__text-wrapper.banner__content {
+    height: 100%;
+    padding: 0rem;
+  }
+}
+
+/* Custom code for formating lines on drawer menu - including blue return button options (back buttons) in Mobile mode.*/
+.menu-drawer__menu li {
+  padding: 12.8px !important;
+  padding-bottom: 12.5px !important;
+  padding-left: 30px !important;
+  border-bottom: 1px solid black !important;
+  margin: 0px !important;
+}
+
+.menu-drawer__menu-item {
+    padding: unset !important;
+    text-decoration: none;
+    font-size: 14px !important;
+}
+
+.menu-drawer__close-button {
+  color: #00FFFF !important;
+  font-weight: 700;
+  border-bottom: .1rem solid rgb(0 0 0);
+  margin-top: -.25rem !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 12.7px !important;
+  font-size: 14px !important;
+}
+
+/**********************************************************************Start of custom JAGS code for hamburger menu icon in Mobile mode.********************************************************************/
+.menu-drawer-container .line,
+.menu-drawer-container .menu-opening .line {
+  fill:none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke:#000;
+  stroke-width:5.5;
+  stroke-linecap:square;
+}
+.menu-drawer-container .background-top-blue, .background-middle-blue, .background-bottom-blue {
+  fill:none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke:#00ffff;
+  stroke-width:13.5;
+  stroke-linecap:square;
+}
+.menu-drawer-container .menu-opening .background-top-blue, .background-middle-blue, .background-bottom-blue {
+  fill:none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke:#00ffff;
+  stroke-width:13.5;
+  stroke-linecap:square;
+}
+
+.menu-drawer-container .background-top-pink, .background-middle-pink, .background-bottom-pink {
+  fill:none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke:#ff00ff;
+  stroke-width:9.5;
+  stroke-linecap:square;
+}
+.menu-drawer-container .menu-opening .background-top-pink, .background-middle-pink, .background-bottom-pink {
+  fill:none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke:#ff00ff;
+  stroke-width:9.5;
+  stroke-linecap:square;
+}
+
+.menu-drawer-container .icon-hamburger .top, .icon-hamburger .background-top-blue, .icon-hamburger .background-top-pink {
+  stroke-dasharray: 40 172;
+}
+.menu-drawer-container .menu-opening .icon-hamburger .top, .icon-hamburger .background-top-blue, .icon-hamburger .background-top-pink {
+  stroke-dasharray: 40 172;
+}
+
+.menu-drawer-container .icon-hamburger .middle, .icon-hamburger .background-middle-blue, .icon-hamburger .background-middle-pink {
+  stroke-dasharray: 40 111;
+}
+.menu-drawer-container .menu-opening .icon-hamburger .middle, .icon-hamburger .background-middle-blue, .icon-hamburger .background-middle-pink {
+  stroke-dasharray: 40 111;
+}
+
+.menu-drawer-container .icon-hamburger .bottom, .icon-hamburger .background-bottom-blue, .icon-hamburger .background-bottom-pink {
+  stroke-dasharray: 40 172;
+}
+.menu-drawer-container .menu-opening .icon-hamburger .bottom, .icon-hamburger .background-bottom-blue, .icon-hamburger .background-bottom-pink {
+  stroke-dasharray: 40 172;
+}
+
+.menu-drawer-container .icon-hamburger.active .top, .icon-hamburger.active .background-top-blue, .icon-hamburger.active .background-top-pink {
+  stroke-dashoffset: -132px;
+}
+.menu-drawer-container .menu-opening .icon-hamburger.active .top, .icon-hamburger.active .background-top-blue, .icon-hamburger.active .background-top-pink {
+  stroke-dashoffset: -132px;
+}
+
+.menu-drawer-container .icon-hamburger.active .middle, .icon-hamburger.active .background-middle-blue, .icon-hamburger.active .background-middle-pink {
+  stroke-dashoffset: -71px;
+}
+.menu-drawer-container .menu-opening .icon-hamburger.active .middle, .icon-hamburger.active .background-middle-blue, .icon-hamburger.active .background-middle-pink {
+  stroke-dashoffset: -71px;
+}
+
+.menu-drawer-container .icon-hamburger.active .bottom, .icon-hamburger.active .background-bottom-blue, .icon-hamburger.active .background-bottom-pink {
+  stroke-dashoffset: -132px;
+}
+.menu-drawer-container .menu-opening .icon-hamburger.active .bottom, .icon-hamburger.active .background-bottom-blue, .icon-hamburger.active .background-bottom-pink {
+  stroke-dashoffset: -132px;
+}
+
+.modal__close-button:hover .icon {
+    transform: scale(2.5) !important;
+}
+
+details:not([open])>.header__icon--menu .icon-close {
+    opacity: 1 !important;
+    transform: scale(2.6) !important;
+}  
+
+details[open]>.header__icon--menu .icon-close {
+    display: none !important;
+}
+
+details[open]>.header__icon--menu .icon-hamburger {
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: scale(2.6) !important;
+}  
+
+.header__icon--menu .icon {
+    display: block;
+    position: absolute;
+    opacity: 1;
+    transform: scale(2.5) !important;
+    transition: transform .15s ease,opacity .15s ease;
+}
+
+/************************************************************************End of custom JAGS code for hamburger menu icon in Mobile mode.*********************************************************************/
+
+/************************************************************************Start of custom JAGS code for arrow overlay menu on homepage top slide show.********************************************************/
+
+@media screen and (min-width: 990px) {
+   .slider-counter.slider-counter--dots {
+    display: none !important;
+  }
+  button.slideshow__autoplay.slider-button.no-js-hidden {
+    display: none !important;
+  }
+  button.slider-button.slider-button--prev {
+    display: inherit;
+    margin-right: 95% !important;
+    position: absolute;
+    margin-bottom: 85rem !important;
+	  color : black !important;
+    background: transparent;
+    border-radius: 100px;
+    box-shadow: 5px 10px 8px #888888;
+  }
+  button.slider-button.slider-button--next {
+    display: inherit;
+    margin-left: 95% !important;
+    position: absolute;
+    margin-bottom: 85rem !important;
+	  color : black !important;
+    background: transparent;
+    border-radius: 100px;
+    box-shadow: -5px 10px 8px #888888;
+  }
+  .slider-button--next:not([disabled]):hover .icon {
+    color: #00ffff;
+  }
+  .slider-button .icon {
+    height: 2.6rem !important;
+  }
+  .slideshow__controls.slideshow__controls--top.slider-buttons.no-js-hidden.slideshow__controls--border-radius-mobile {
+    z-index: 999 !important;
+  }
+  .slideshow.banner.banner--medium {
+    min-height: 70vh;
+  }
+  .slider-button--prev:not([disabled]):hover .icon {
+    color: #ff00ff;
+  }
+  .slider-button--next:not([disabled]):hover .icon {
+    color: #00ffff;
+  }
+} 
+
+/* Removes slider buttons and moves slider controls on top of slide.  */
+@media screen and (max-width:990px) {
+  .slideshow__controls {
+   margin-top: -45px;
+  }
+  .slider-button {
+  color: rgba(var(--color-foreground),.75);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  display: none !important;
+  align-items: center;
+  justify-content: center;
+  } 
+}
+
+
+/************************************************************************End of custom JAGS code for arrow overlay menu on homepage top slide show.********************************************************/
+
+/**************************************************************************************Start of custom JAGS code for Product page**************************************************************************/
+
+/* Start of custom JAGS code for Product Page accordion (collapsable rows), thumbnails (padding and aligning to to left with columns), 
+main product image centering, mobile slider counter and corresponding buttons. */
+
+/* Start of custom JAGS code for Product Page accordion (collapsable rows). */
+.rte>*:first-child, .rte>*:last-child {
+    margin-bottom: 0;
+    font-size: 12px;
+}
+
+.accordion__title {
+    display: inline-block;
+    max-width: calc(100% - 6rem);
+    min-height: 1.6rem;
+    margin: 0;
+    word-break: break-word;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/*Start of custom JAGS code for main product thumbnails (padding and aligning to to left with columns).*/
+.jags-custom-media-gallery {
+    flex-direction: row-reverse;
+    display: flex;
+    justify-content: center;
+}
+
+.product__media-wrapper slider-component:not(.thumbnail-slider--no-slide) {
+    height: auto;
+    width: 100%;
+}
+
+@media screen and (min-width: 1550px) {
+.product__media-wrapper .thumbnail-list {
+    flex-direction: column;
+    margin-right: 0px;
+    transform: scale(2);
+    grid-gap: 0rem;
+    position: relative;
+    top: 12rem;
+    padding-left: 23rem !important;
+  }
+}
+
+@media screen and (max-width: 750px) {
+.product--thumbnail .thumbnail-list {
+    padding-left: 3rem !important;
+  }
+}
+
+@media screen and (max-width: 750px) {
+    .grid--peek.slider:after {
+        margin-left: unset;
+    }
+}
+
+.product__media-wrapper .thumbnail-list li  {
+    margin-bottom: 10px;
+    cursor: pointer;
+    width: 50px;
+    height: auto;
+}
+
+.product--thumbnail_slider .slider-mobile-gutter .slider-button {
+    display: none !important;
+}
+
+@media screen and (min-width: 750px) {
+    .product--large .thumbnail-list {
+    grid-template-columns: repeat(1,1fr) !important;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .product-media-modal__content>.product__media-item--variant:first-child {
+    display: block;
+    height: auto;
+    margin: auto;
+    }
+}
+
+.thumbnail[aria-current] {
+    box-shadow: none !important;
+    border-color: unset !important;
+    box-shadow: 2px 0px 8px #ff00ff, -2px 0px 8px #00ffff !important;
+}
+
+.thumbnail:hover {
+    opacity: .7 !important;
+    box-shadow: 2px 0px 2px #ff00ff, -2px 0px 2px #00ffff !important;
+    transition-property: outline-color, outline-width, box-shadow !important;
+    transition-duration: .1s !important;
+    transition-timing-function: ease !important;
+    cursor: pointer;
+    outline-offset: .2rem;
+    outline-color: transparent;
+    outline-style: solid;
+}
+
+.grid--peek.slider--mobile {
+    margin: 0;
+    width: 105% !important;
+}
+
+/* Allows mobile product images to be swiped one at a time. Slows down swipe. */
+.slider__slide {
+  scroll-snap-stop: always;
+}
+
+/* Start of custom JAGS code for product page padding. THIS CENTERS PRODUCT PAGE CONTENT TO THE MIDDLE*/
+ @media screen and (min-width: 1255px) {
+.product--large:not(.product--no-media) .product__info-wrapper {
+    padding: 0px 120px 0 5rem !important;
+    max-width: 35%;
+    width: calc(35% - var(--grid-desktop-horizontal-spacing) / 2);
+  }
+} 
+
+/* Start of custom JAGS code for main product image centering (left and right).*/
+  @media screen and (min-width: 990px) {
+    .product:not(.product--columns), 
+    .product__media-list, 
+    .product__media-item,
+    .product__media-item--full {
+        width: 100% !important;
+    }
+}
+
+@media screen and (min-width: 990px) {
+.product--large:not(.product--no-media) .product__media-wrapper {
+    max-width: 55% !important;
+    width: calc(65% - var(--grid-desktop-horizontal-spacing) / 2);
+  }
+}
+
+/* Start of custom JAGS code for mobile slider counter and corresponding buttons.*/
+.product .slider-counter { 
+    display: none; 
+}
+
+.product .slider-buttons {
+    display: none;
+    align-items: center;
+    justify-content: space-evenly;
+}
+  
+/* Start of custom JAGS code for mobile product image selection zoom (This makes image fit the whole screen when product image selected in mobile).*/
+@media screen and (max-width: 749px) {
+    .product-media-modal__dialog .global-media-settings, 
+    .product-media-modal__dialog .global-media-settings video, 
+    .product-media-modal__dialog .global-media-settings model-viewer,
+    .product-media-modal__dialog .global-media-settings iframe, 
+    .product-media-modal__dialog .global-media-settings img {
+        border: none;
+        border-radius: 0;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 15%;      
+    }
+}
+
+/* Start of custom JAGS code for Size pills. */
+.product-form__input--pill input[type=radio]+label {
+  font-size: 1rem !important;
+  transition: unset !important;
+  width: 70px !important;
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.product-form__input--pill input[type=radio]:checked+label {
+    background-color: white !important;
+    color: black !important;
+    box-shadow: 1px 0px 6px #ff00ff, -1px 0px 6px #00ffff;
+    border-width: 2px;
+    margin: 0 0.5rem 0 0;
+}
+
+.product-form__input--pill input[type=radio]+label:hover {
+  border: none;
+  box-shadow: 1px 0px 3px #ff00ff, -1px 0px 3px #00ffff;
+  transition-property: outline-color, outline-width, box-shadow !important;
+  transition-duration: .1s !important;
+  transition-timing-function: ease !important;
+  cursor: pointer;
+  outline-offset: .1rem;
+  /* outline-color: transparent; */
+  /* outline-style: solid; */
+}
+
+.swatch-input__input:active+.swatch-input__label, .swatch-input__input:checked+.swatch-input__label {
+  outline: none !important;
+  box-shadow: 1px 0px 6px #ff00ff, -1px 0px 6px #00ffff;
+}
+
+.swatch-input__input+.swatch-input__label:hover {
+  outline: none !important;
+  box-shadow: 1px 0px 3px #ff00ff, -1px 0px 3px #00ffff;
+}
+
+.quantity__input[type=number] {
+  border: none !important;
+  outline: none !important;
+  padding: 0px;
+  margin: 2px;
+  box-shadow: 1px 0px 6px #ff00ff, -1px 0px 6px #00ffff;
+  -moz-appearance: unset;
+}
+
+/* Payment buttons box shadow effects. */
+.product-form__submit:hover,
+.shopify-payment-button__button:hover,
+.shopify-cleanslate:hover {
+  outline: none !important;
+  box-shadow: 2px 0px 10px #ff00ff, -2px 0px 10px #00ffff;
+  border-radius: 5px;
+}
+  
+/* Start of custom JAGS code for Product Title*/
+@media only screen and (min-width: 360px) { 
+    h1, .h1 {
+        font-size: 2rem !important;
+    }
+}
+
+/* Size guide button settings. */
+.product-popup-modal__button {
+  font-size: 1.3rem !important;
+  padding-right: 1.3rem !important;
+  padding-left: 0 !important;
+  min-height: 0rem !important;
+  text-underline-offset: .3rem !important;
+  text-decoration-thickness: .1rem !important;
+  transition: text-decoration-thickness var(--duration-short) ease !important;
+}
+
+.product-popup-modal__button.link {
+  text-decoration: none !important;
+}
+
+.product-popup-modal__button:hover {
+  text-decoration: none !important;
+  text-shadow: 1px 0px 2px #ff00ff, -1px 0px 2px #00ffff;
+}
+
+/* Start of custom JAGS code for Size Guide Pop-Up. */
+.product-popup-modal__content {
+  height: auto !important;
+  margin: 0 auto !important;
+  left: 50% !important;
+  transform: translate(-50%) !important;
+  margin-top: 10rem !important;
+  width: 95% !important;
+  position: absolute !important;
+  top: 0 !important;
+  padding: 10px 1rem 10px 1rem !important;
+  border-color: rgba(var(--color-foreground), var(--popup-border-opacity));
+  border-style: solid;
+  border-width: var(--popup-border-width);
+}
+
+.product-popup-modal__content .h2 {
+  display:none;
+}
+
+.product-popup-modal__content-info {
+  padding-right: 0rem !important;
+  padding-bottom: 2rem;
+}
+
+.product-popup-modal__content-info>* {
+  height: auto;
+  margin: 30px auto !important;
+  max-width: 100%;
+  width: 100%;
+}
+
+/* Remove product tax verbiage in product page, under price.  */
+.product__tax {
+  margin-top: -1.4rem;
+  display: none;
+}
+
+/* Margin for product information sections.  */
+.product__info-container>*+* {
+  margin: 1rem 0px !important;
+}
+
+/* Custom hr tag settings. Tag created in main-product-liquid section.  */
+hr {
+  margin: 0rem 0;
+  margin-top: 5px;
+  border: none;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+/* Product rating stars formatting.  */
+.jdgm-prev-badge {
+  padding-bottom: 1rem !important;
+  margin-top: -1rem !important;
+}
+
+
+/**************************************************************************************End of custom JAGS code for Product page**************************************************************************/
+
+/* Start of custom JAGS code for Collections in home page*/
+.card__content {
+    display: grid;
+    grid-template-rows: minmax(0,1fr) max-content minmax(0,1fr);
+    padding: 1rem;
+    width: 100%;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.card__heading {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.5rem !important;
+}
+
+/* Collection page rating star attributes.*/
+.rating-star {
+  --color-rating-star: #00ffff !important;
+  --percent: calc( ( var(--rating) / var(--rating-max) + var(--rating-decimal) * var(--font-size) / (var(--rating-max) * (var(--letter-spacing) + var(--font-size))) ) * 100% );
+  letter-spacing: calc(var(--letter-spacing) * .5rem) !important;
+  font-size: calc(var(--font-size) * 1.5rem) !important;
+  line-height: 1;
+  display: inline-block;
+  font-family: Times;
+  margin: 0;
+}
+
+  .rating-count {
+    display: none !important;
+    margin: 0;
+}
+
+.underline-links-hover:hover a {
+  text-decoration: none !important;
+  text-underline-offset: .3rem;
+  text-shadow: 1px 0px 2px #ff00ff, -1px 0px 2px #00ffff;
+}
