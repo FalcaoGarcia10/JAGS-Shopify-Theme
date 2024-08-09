@@ -127,6 +127,7 @@
     },
     "related-products": {
       "type": "related-products",
+      "disabled": true,
       "settings": {
         "heading": "YOU MAY ALSO LIKE",
         "heading_size": "h1",

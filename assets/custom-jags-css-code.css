@@ -77,6 +77,13 @@
 }
 
 /*Custom code for removing underlining to manin menu (level-1) when not selected or hovered.*/
+/* Below is the JSON schema code for JAGS custom hover menu. Schema is located in header.liquid. Had to include here for reference.*/
+/* "type": "checkbox",
+      "id": "hover",
+      "label":"t:sections.header.settings.hover.label"  */
+
+
+
 .header__active-menu-item {
   color: #000000;
   text-decoration: none !important;   
@@ -219,7 +226,7 @@ summary.list-menu__item {
 }
 
 /*Custom code for adding and formating icon-caret to close button on drawer menu in Mobile mode. 
-IMPORTANT!!! THIS CODE IS USESLESS, UNLESS icon-arrow IN CLOSE BUTTON IS CHANGED TO icon-caret IN header-drawer.liquid, LINES 43 AND 78.*/
+IMPORTANT!!! THIS CODE IS USESLESS, UNLESS icon-arrow IN CLOSE BUTTON IS CHANGED TO icon-caret IN header-drawer.liquid, LINES 45 AND 83.*/
 .menu-drawer__close-button .icon-caret {
   transform: rotate(90deg);
   height: .6rem;

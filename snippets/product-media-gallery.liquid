@@ -11,6 +11,7 @@
   {% render 'product-media-gallery' %}
 {% endcomment %}
 
+{% comment %} JAGS Custom Code {% endcomment %}
 {% assign variant_grouping_position = section.settings.variant_grouping_position | minus: 1 %}
 {% assign variant_image_groupings = product.metafields.custom.variant_images_grouping_list.value %}
 
@@ -23,6 +24,7 @@
     display: none;
   }
 </style>
+{% comment %} JAGS Custom Code {% endcomment %}
 
 {%- liquid
   if section.settings.hide_variants and variant_images.size == product.media.size
@@ -56,8 +58,7 @@
 -%}
 
 <media-gallery
-  {% comment %} Created custom JAGS class below {% endcomment %}
-  id="MediaGallery-{{ section.id }}" class="jags-custom-media-gallery"  
+  id="MediaGallery-{{ section.id }}" class="jags-custom-media-gallery"
   role="region"
   {% if section.settings.enable_sticky_info %}
     class="product__column-sticky"
@@ -65,9 +66,11 @@
   aria-label="{{ 'products.product.media.gallery_viewer' | t }}"
   data-desktop-layout="{{ section.settings.gallery_layout }}"
     
+{% comment %} JAGS Custom Code {% endcomment %}
   data-group-variants="{{ section.settings.group_variants_enable }}"
   data-has-only-default-variant="{{ product.has_only_default_variant }}"
   data-disable-image-grouping="{{ product.metafields.custom.disable_image_grouping.value }}"
+{% comment %} JAGS Custom Code {% endcomment %}
 >
   <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
   <slider-component id="GalleryViewer-{{ section.id }}" class="slider-mobile-gutter">
@@ -83,6 +86,7 @@
         {%- assign featured_media = product.selected_or_first_available_variant.featured_media -%}
 
         
+{% comment %} JAGS Custom Code {% endcomment %}        
 {% if section.settings.group_variants_enable and product.has_only_default_variant != true and product.metafields.custom.disable_image_grouping.value != true %}   
   {% if section.settings.group_variants_source == "metafield" %}     
     {%- assign variant_grouping_name = nil -%}
@@ -110,12 +114,18 @@
     {%- assign selected_or_first_available_variant_grouping_name = variant_grouping_name -%}
   {% endif %}
 {% endif %} 
-        
+{% comment %} JAGS Custom Code {% endcomment %}
+
+
         <li
           id="Slide-{{ section.id }}-{{ featured_media.id }}"
           class="product__media-item grid__item slider__slide is-active{% if single_media_visible %} product__media-item--single{% endif %}{% if featured_media.media_type != 'image' %} product__media-item--full{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
           data-media-id="{{ section.id }}-{{ featured_media.id }}"
+          
+        {% comment %} JAGS Custom Code {% endcomment %}
           data-variant-grouping="{{ variant_grouping_name }}"
+        {% comment %} JAGS Custom Code {% endcomment %}
+
         >
           {%- assign media_position = 1 -%}
           {% render 'product-thumbnail',
@@ -146,6 +156,7 @@
         {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
 
 
+{% comment %} JAGS Custom Code {% endcomment %}          
     {% if section.settings.group_variants_enable and product.has_only_default_variant != true and product.metafields.custom.disable_image_grouping.value != true %} 
   {% if section.settings.group_variants_source == "metafield" %}       
     {%- assign variant_grouping_name = nil -%}
@@ -185,13 +196,22 @@
     {%- endif -%}
   {% endif %} 
 {% endif %} 
+{% comment %} JAGS Custom Code {% endcomment %}
 
 
           <li
             id="Slide-{{ section.id }}-{{ media.id }}"
+
+          {% comment %} JAGS Custom Code is {% if hide_image %} hide-image{% endif %} {% endcomment %}
             class="{% if hide_image %} hide-image{% endif %} product__media-item grid__item slider__slide{% if single_media_visible %} product__media-item--single{% endif %}{% if product.selected_or_first_available_variant.featured_media == nil and forloop.index == 1 %} is-active{% endif %}{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+          {% comment %} JAGS Custom Code is {% if hide_image %} hide-image{% endif %} {% endcomment %}
+
             data-media-id="{{ section.id }}-{{ media.id }}"
+
+          {% comment %} JAGS Custom Code {% endcomment %}
             data-variant-grouping="{{ variant_grouping_name }}"
+          {% comment %} JAGS Custom Code {% endcomment %}
+
           >
             {%- liquid
               assign media_position = media_position | default: 0 | plus: 1
@@ -307,6 +327,8 @@
             assign media_index = media_index | plus: 1
           -%}
 
+
+{% comment %} JAGS Custom Code {% endcomment %}          
   {% if section.settings.group_variants_enable and product.has_only_default_variant != true and product.metafields.custom.disable_image_grouping.value != true %}   
   {% if section.settings.group_variants_source == "metafield" %}     
     {%- assign variant_grouping_name = nil -%}
@@ -334,13 +356,19 @@
     {%- assign selected_or_first_available_variant_grouping_name = variant_grouping_name -%}
   {% endif %}
 {% endif %} 
+{% comment %} JAGS Custom Code {% endcomment %}
+
 
           <li
             id="Slide-Thumbnails-{{ section.id }}-0"
             class="thumbnail-list__item slider__slide{% if section.settings.hide_variants and variant_images contains featured_media.src %} thumbnail-list_item--variant{% endif %}"
             data-target="{{ section.id }}-{{ featured_media.id }}"
             data-media-position="{{ media_index }}"
+            
+          {% comment %} JAGS Custom Code {% endcomment %}
             data-variant-grouping="{{ variant_grouping_name }}"
+          {% comment %} JAGS Custom Code {% endcomment %}
+          
           >
             {%- capture thumbnail_id -%}
               Thumbnail-{{ section.id }}-0
@@ -381,6 +409,8 @@
               assign media_index = media_index | plus: 1
             -%}
 
+
+{% comment %} JAGS Custom Code {% endcomment %}
 {% if section.settings.group_variants_enable and product.has_only_default_variant != true and product.metafields.custom.disable_image_grouping.value != true %} 
   {% if section.settings.group_variants_source == "metafield" %}       
     {%- assign variant_grouping_name = nil -%}
@@ -420,14 +450,22 @@
     {%- endif -%}
   {% endif %} 
 {% endif %} 
+{% comment %} JAGS Custom Code {% endcomment %}
 
             
             <li
               id="Slide-Thumbnails-{{ section.id }}-{{ forloop.index }}"
+            
+            {% comment %} JAGS Custom Code is {% if hide_image %} hide-image{% endif %} {% endcomment %}
               class="{% if hide_image %} hide-image{% endif %} thumbnail-list__item slider__slide{% if section.settings.hide_variants and variant_images contains media.src %} thumbnail-list_item--variant{% endif %}"
+            {% comment %} JAGS Custom Code is {% if hide_image %} hide-image{% endif %} {% endcomment %}
+              
               data-target="{{ section.id }}-{{ media.id }}"
               data-media-position="{{ media_index }}"
+              
+            {% comment %} JAGS Custom Code {% endcomment %}
               data-variant-grouping="{{ variant_grouping_name }}"
+            {% comment %} JAGS Custom Code {% endcomment %}
             >
               {%- if media.media_type == 'model' -%}
                 <span class="thumbnail__badge" aria-hidden="true">

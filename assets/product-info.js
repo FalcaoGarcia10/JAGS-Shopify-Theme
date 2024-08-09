@@ -178,8 +178,12 @@ if (!customElements.get('product-info')) {
         
           this.updateMedia(html, variant?.featured_media?.id);
           
-          this.updateMediaGrouping();
           
+          // JAGS Custom Code
+          this.updateMediaGrouping();
+          // JAGS Custom Code
+
+
           const updateSourceFromDestination = (id, shouldHide = (source) => false) => {
             const source = html.getElementById(`${id}-${this.sectionId}`);
             const destination = this.querySelector(`#${id}-${this.dataset.section}`);
@@ -315,6 +319,8 @@ if (!customElements.get('product-info')) {
         if (modalContent && newModalContent) modalContent.innerHTML = newModalContent.innerHTML;
       }
 
+
+// JAGS Custom Code
 updateMediaGrouping() {
   const mediaGalleries = this.querySelectorAll('media-gallery');
   mediaGalleries.forEach(mediaGallery => {
@@ -348,7 +354,7 @@ updateMediaGrouping() {
     }
   });
 }
-
+// JAGS Custom Code
 
       
       setQuantityBoundries() {

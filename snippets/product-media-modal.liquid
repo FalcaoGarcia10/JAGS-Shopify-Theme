@@ -10,10 +10,13 @@
 {% endcomment %}
 
 
+{% comment %} JAGS Custom Code {% endcomment %}
 {% assign variant_grouping_position = section.settings.variant_grouping_position | minus: 1 %}
 {% assign variant_image_groupings = product.metafields.custom.variant_images_grouping_list.value %}
 {% assign featured_media = product.selected_or_first_available_variant.featured_media %}
 {% assign hide_image = false %}
+{% comment %} JAGS Custom Code {% endcomment %}
+
 
 <product-modal id="ProductModal-{{ section.id }}" class="product-media-modal media-modal">
   <div
@@ -39,6 +42,8 @@
       tabindex="0"
     >
 
+
+{% comment %} JAGS Custom Code {% endcomment %}    
 {% if section.settings.group_variants_enable and product.has_only_default_variant != true and product.metafields.custom.disable_image_grouping.value != true %}   
   {% if section.settings.group_variants_source == "metafield" %}     
     {%- assign variant_grouping_name = nil -%}
@@ -66,12 +71,17 @@
     {%- assign selected_or_first_available_variant_grouping_name = variant_grouping_name -%}
   {% endif %}
 {% endif %} 
+{% comment %} JAGS Custom Code {% endcomment %}
 
       
       {%- liquid
         if product.selected_or_first_available_variant.featured_media != null
           assign media = product.selected_or_first_available_variant.featured_media
+
+          {% comment %} JAGS Custom Code is hide_image: hide_image, variant_grouping_name: variant_grouping_name {% endcomment %}
           render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: variant_image, hide_image: hide_image, variant_grouping_name: variant_grouping_name
+          {% comment %} JAGS Custom Code is hide_image: hide_image, variant_grouping_name: variant_grouping_name {% endcomment %}
+
         endif
       -%}
 
@@ -84,6 +94,8 @@
           endif
           -%}
 
+
+{% comment %} JAGS Custom Code {% endcomment %}          
 {% if section.settings.group_variants_enable and product.has_only_default_variant != true and product.metafields.custom.disable_image_grouping.value != true %} 
   {% if section.settings.group_variants_source == "metafield" %}       
     {%- assign variant_grouping_name = nil -%}
@@ -123,12 +135,17 @@
     {%- endif -%}
   {% endif %} 
 {% endif %} 
-
+{% comment %} JAGS Custom Code {% endcomment %}
+ 
         
         {%- liquid
           unless media.id == product.selected_or_first_available_variant.featured_media.id
+
+            {% comment %} JAGS Custom Code is hide_image: hide_image, variant_grouping_name: variant_grouping_name {% endcomment %}
             render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: variant_image, hide_image: hide_image, variant_grouping_name: variant_grouping_name
-          endunless
+            {% comment %} JAGS Custom Code is hide_image: hide_image, variant_grouping_name: variant_grouping_name {% endcomment %}
+          
+            endunless
         -%}
       {%- endfor -%}
     </div>
