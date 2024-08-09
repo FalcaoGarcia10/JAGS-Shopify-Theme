@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"name": "JAGS-Shopify-Theme",
+			"path": ".."
+		}
+	],
+	"settings": {
+		"explorer.excludeGitIgnore": true,
+		"files.exclude": {
+			"**/.yml": true
+		}
+	}
+}
