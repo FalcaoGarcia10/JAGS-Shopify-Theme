@@ -670,10 +670,11 @@ main product image centering, mobile slider counter and corresponding buttons. *
 .quantity__input[type=number] {
   border: none !important;
   outline: none !important;
-  padding: 0px;
+  padding: 0rem;
   margin: 2px;
   box-shadow: 1px 0px 6px #ff00ff, -1px 0px 6px #00ffff;
-  -moz-appearance: unset;
+  /* -moz-appearance: unset; */
+  /* This is a test to see if it worked. */
 }
 
 /* Payment buttons box shadow effects. */
