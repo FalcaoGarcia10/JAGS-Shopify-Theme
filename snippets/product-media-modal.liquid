@@ -1,12 +1,12 @@
 {% comment %} Renders a product media modal. Also see 'product-media-gallery'
-  
-    
-    Accepts:
-    - product: {Object} Product liquid object
-    - variant_images: {Array} Product images associated with a variant
-  
-    Usage:
-    {% render 'product-media-modal' %}
+      
+        
+        Accepts:
+        - product: {Object} Product liquid object
+        - variant_images: {Array} Product images associated with a variant
+      
+        Usage:
+        {% render 'product-media-modal' %}
 {% endcomment %}
 
 
@@ -70,16 +70,13 @@
       {% endif %}
       {% comment %} JAGS Custom Code {% endcomment %}
 
-
+      {% comment %} JAGS Custom Code: Line 77 below {% endcomment %}
       {%- liquid
         if product.selected_or_first_available_variant.featured_media != null
           assign media = product.selected_or_first_available_variant.featured_media
           render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: variant_image, hide_image: hide_image, variant_grouping_name: variant_grouping_name
-          {% comment%}
-        JAGS Custom Code: Line above
-      {% endcomment %}
-      endif
- 
+
+        endif
       -%}
 
       {%- for media in product.media -%}
@@ -134,15 +131,12 @@
         {% endif %}
         {% comment %} JAGS Custom Code {% endcomment %}
 
-
+        {% comment %} JAGS Custom Code: Line 140 below {% endcomment %}
         {%- liquid
           unless media.id == product.selected_or_first_available_variant.featured_media.id
             render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: variant_image, hide_image: hide_image, variant_grouping_name: variant_grouping_name
-            {% comment%}
-          JAGS Custom Code: Line above
-        {% endcomment %}
-        endunless
- 
+
+          endunless
         -%}
       {%- endfor -%}
     </div>
