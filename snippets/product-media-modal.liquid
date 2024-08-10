@@ -79,7 +79,7 @@
         if product.selected_or_first_available_variant.featured_media != null
           assign media = product.selected_or_first_available_variant.featured_media
 
-          {% comment %} JAGS Custom Code is hide_image: hide_image, variant_grouping_name: variant_grouping_name {% endcomment %}
+          {% comment %} JAGS Custom Code {% endcomment %}
           render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: variant_image, hide_image: hide_image, variant_grouping_name: variant_grouping_name
 
         endif
