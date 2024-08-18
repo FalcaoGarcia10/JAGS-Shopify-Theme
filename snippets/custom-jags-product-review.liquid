@@ -1,222 +1,220 @@
 {% comment %} Renders button and modal to write a review. {% endcomment %}
 
-{% comment %} 
-                                                    <div class="box">
-                                                      <a class="button" href="#pop-up">Write a review</a>
-                                                    </div>
-                                                    
-                                                    <div id="pop-up" class="overlay">
-                                                      <div class="popup">
-                                                        <h2>Product Review</h2>
-                                                        <a class="close" href="#">&times;</a>
-                                                        <div class="content">
-                                                          <a href="#judgeme_product_reviews">
-                                                            Click here for review</a>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                    
-                                                    <style>
-                                                      body {
-                                                        background-size: cover;
-                                                        height: 100vh;
-                                                      }
-                                                    
-                                                      .box {
-                                                        width: 40%;
-                                                        margin: 0 auto;
-                                                        background: rgba(255, 255, 255, 0.2);
-                                                        padding: 70px;
-                                                        border: 2px solid #fff;
-                                                        border-radius: 20px / 50px;
-                                                        background-clip: padding-box;
-                                                        text-align: center;
-                                                      }
-                                                    
-                                                      .overlay {
-                                                        position: fixed;
-                                                        top: 0;
-                                                        bottom: 0;
-                                                        left: 0;
-                                                        right: 0;
-                                                        background: rgba(0, 0, 0, 0.7);
-                                                        transition: opacity 500ms;
-                                                        visibility: hidden;
-                                                        opacity: 0;
-                                                      }
-                                                      .overlay:target {
-                                                        visibility: visible;
-                                                        opacity: 1;
-                                                      }
-                                                    
-                                                      .popup {
-                                                        margin: 70px auto;
-                                                        padding: 20px;
-                                                        background: #fff;
-                                                        border-radius: 5px;
-                                                        width: 30%;
-                                                        position: relative;
-                                                        transition: all 5s ease-in-out;
-                                                      }
-                                                    
-                                                      .popup h2 {
-                                                        margin-top: 0;
-                                                        color: #333;
-                                                    
-                                                      }
-                                                      .popup .close {
-                                                        position: absolute;
-                                                        top: 20px;
-                                                        right: 30px;
-                                                        transition: all 200ms;
-                                                        font-size: 30px;
-                                                        font-weight: bold;
-                                                        text-decoration: none;
-                                                        color: #333;
-                                                      }
-                                                    
-                                                      .popup .content {
-                                                        max-height: 30%;
-                                                        overflow: auto;
-                                                      }
-                                                    
-                                                      @media screen and (max-width: 700px) {
-                                                        .box {
-                                                          width: 70%;
-                                                        }
-                                                        .popup {
-                                                          width: 70%;
-                                                        }
-                                                      }
-                                                    
-                                                    
-</style> {% endcomment %}
-{% comment %} 
-                        <div class="box">
-                          <a
-                            data-target="#myModal"
-                            data-toggle="modal"
-                            id="MainNavHelp"
-                            href="#myModal">HELP</a>
-                        
-</div> {% endcomment %}
+<div class="box">
+  <a class="button" href="#pop-up">Write a review</a>
+</div>
 
+<div id="pop-up" class="overlay">
+  <div class="popup">
+    <h2>Product Review</h2>
+    <a class="close" href="#">&times;</a>
+    <div class="content">
+      <iframe src="#judgeme_product_reviews">click here</iframe>
 
-{% comment %} <script defer src="product-review-modal-script.js"></script> {% endcomment %}
-
-<button data-modal-target="#modal">Write a review</button>
-<div class="modal" id="modal">
-  <div class="modal-header">
-    <div class="title">Product Review</div>
-    <button data-close-button class="close-button">&times;</button>
-  </div>
-  <div class="modal-body">
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe a provident velit, nam sint temporibus doloremque laudantium dolorum nemo veritatis repellat molestiae culpa distinctio quia fugiat minus inventore expedita enim odio ipsam praesentium voluptates quibusdam nulla? Natus eveniet error ipsum minima velit consequatur iure, dicta accusamus iusto repellendus temporibus perferendis tempore ea omnis! Explicabo id natus suscipit inventore deleniti mollitia ipsam enim aliquid! Inventore similique recusandae eligendi tempore facere sunt esse! Officia recusandae aliquam maxime est harum quidem. Molestias, similique!
+    </div>
   </div>
 </div>
-<div id="overlay"></div>
-
 
 <style>
+  body {
+    background-size: cover;
+    height: 100vh;
+  }
 
-  .modal {
+  .box {
+    width: 40%;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 70px;
+    border: 2px solid #fff;
+    border-radius: 20px / 50px;
+    background-clip: padding-box;
+    text-align: center;
+  }
+
+  .overlay {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    transition: 200ms ease-in-out;
-    border: 1px solid black;
-    border-radius: 10px;
-    z-index: 10;
-    background-color: white;
-    width: 500px;
-    max-width: 80%;
-  }
-
-  .modal.active {
-    transform: translate(-50%, -50%) scale(1);
-  }
-
-  .modal-header {
-    padding: 10px 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid black;
-  }
-
-  .modal-header .title {
-    font-size: 1.25rem;
-    font-weight: bold;
-  }
-
-  .modal-header .close-button {
-    cursor: pointer;
-    border: none;
-    outline: none;
-    background: none;
-    font-size: 1.25rem;
-    font-weight: bold
-  }
-
-  .modal-body {
-    padding: 10px 15px;
-  }
-
-  #overlay {
-    position: fixed;
-    opacity: 0;
-    transition: 200ms ease-in-out;
     top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    pointer-events: none;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
   }
 
-  #overlay.active {
-    opacity: 1;
-    pointer-events: all;
+  .popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
   }
+
+  .popup h2 {
+    margin-top: 0;
+    color: #333;
+
+  }
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+
+  .popup .content {
+    max-height: 30%;
+    overflow: auto;
+  }
+
+  @media screen and (max-width: 700px) {
+    .box {
+      width: 70%;
+    }
+    .popup {
+      width: 70%;
+    }
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
 </style>
 
-<script>
-  
-  const openModalButtons = document.querySelectorAll('[data-modal-target]')   
-  const closeModalButtons = document.querySelectorAll('[data-close-button]') 
-  const overlay = document.getElementById('overlay')
-  
-  openModalButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const modal= document.querySelector(button.dataset.modalTarget)
-      openModal(modal)
-    })
-  })
-  
-  closeModalButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const modal= button.closest('modal')
-      closeModal(modal)
-    })
-  })
-  
-  function openModal(modal) {
-    if (modal == null) return
-    modal.classList.add('active')
-    overlay.classList.add('active')
-  }
-  
-  function closeModal(modal) {
-    if (modal == null) return
-    modal.classList.remove('active')
-    overlay.classList.remove('active')
-  }
-  
-  overlay.addEventListener('click', () => {
-   const modals = document.querySelectorAll('.modal.active')
-   modals.forEach(modal => {
-    closeModal(modal)
-   }) 
-  })
-</script>
+<div class="box">
+  <a
+    data-target="#myModal"
+    data-toggle="modal"
+    id="MainNavHelp"
+    href="#myModal">HELP</a>
+
+</div>
+
+
+{% comment %} <script defer src="product-review-modal-script.js"></script>
+            
+            <button data-modal-target="#modal">Write a review</button>
+            <div class="modal" id="modal">
+              <div class="modal-header">
+                <button data-close-button class="close-button">&times;</button>
+              </div>
+              <div class="modal-body">
+                <iframe src="https://www.google.com"></iframe>
+              </div>
+            </div>
+            <div id="overlay"></div>
+            
+            
+            <style>
+            
+              .modal {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(0);
+                transition: 200ms ease-in-out;
+                border: 1px solid black;
+                border-radius: 10px;
+                z-index: 10;
+                background-color: white;
+                width: 500px;
+                max-width: 80%;
+              }
+            
+              .modal.active {
+                transform: translate(-50%, -50%) scale(1);
+              }
+            
+              .modal-header {
+                padding: 10px 15px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid black;
+              }
+            
+              .modal-header .close-button {
+                cursor: pointer;
+                border: none;
+                outline: none;
+                background: none;
+                font-size: 1.25rem;
+                font-weight: bold
+              }
+            
+              .modal-body {
+                padding: 10px 15px;
+              }
+            
+              #overlay {
+                position: fixed;
+                opacity: 0;
+                transition: 200ms ease-in-out;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, 0.5);
+                pointer-events: none;
+              }
+            
+              #overlay.active {
+                opacity: 1;
+                pointer-events: all;
+              }
+            </style>
+            
+            <script>
+              
+              const openModalButtons = document.querySelectorAll('[data-modal-target]')   
+              const closeModalButtons = document.querySelectorAll('[data-close-button]') 
+              const overlay = document.getElementById('overlay')
+              
+              openModalButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                  const modal= document.querySelector(button.dataset.modalTarget)
+                  openModal(modal)
+                })
+              })
+              
+              closeModalButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                  const modal= button.closest('.modal')
+                  closeModal(modal)
+                })
+              })
+              
+              function openModal(modal) {
+                if (modal == null) return
+                modal.classList.add('active')
+                overlay.classList.add('active')
+              }
+              
+              function closeModal(modal) {
+                if (modal == null) return
+                modal.classList.remove('active')
+                overlay.classList.remove('active')
+              }
+              
+              overlay.addEventListener('click', () => {
+               const modals = document.querySelectorAll('.modal.active')
+               modals.forEach(modal => {
+                closeModal(modal)
+               }) 
+              })
+</script> {% endcomment %}
